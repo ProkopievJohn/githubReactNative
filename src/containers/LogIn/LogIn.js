@@ -16,27 +16,29 @@ export default class LogIn extends Component {
                 <View style={styles.logoContainer}>
                     <Image
                         style={styles.logoImage}
-                        source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+                        source={require('../../imgs/images.png')}
                         />
                     <Text style={styles.logoText}>
                         Lorem ipsum dolor sit amet.
                     </Text>
                 </View>
-                <View style={styles.form}>
+                <View style={styles.formContainer}>
                     <TextInput
+                        style={styles.input}
                         placeholder='login'
                         returnKeyType='next'
                         onSubmitEditing={() => this.passwordInput.focus()}
                         autoCorrect={false}
                         />
                     <TextInput
+                        style={styles.input}
                         placeholder='password'
                         secureTextEntry
                         returnKeyType='Login'
                         ref={ input => {this.passwordInput = input;}}
                         />
-                    <TouchableOpacity>
-                        <Text>Login</Text>
+                    <TouchableOpacity style={styles.btnContainer}>
+                        <Text style={styles.btn}>Login</Text>
                     </TouchableOpacity>
                 </View>
             </KeyboardAvoidingView>
@@ -46,7 +48,8 @@ export default class LogIn extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#24292e',
     },
     logoContainer: {
         flexGrow: 1,
@@ -58,9 +61,26 @@ const styles = StyleSheet.create({
         height: 100
     },
     logoText: {
-        margin: 10
+        marginTop: 30,
+        opacity: 0.5,
+        fontSize: 20,
+        color: 'rgba(255,255,255,0.75)'
     },
-    form: {
-        flexGrow: 1
-    }
+    formContainer: {
+        padding: 30
+    },
+    input: {
+        marginTop: 10,
+        backgroundColor: 'rgba(255,255,255,0.9)',
+        paddingHorizontal: 10
+    },
+    btnContainer: {
+        backgroundColor: 'rgba(255,255,255,0.6)',
+        marginTop: 30,
+        marginHorizontal: 10,
+        padding: 25
+    },
+    // btn: {
+
+    // }
 });
